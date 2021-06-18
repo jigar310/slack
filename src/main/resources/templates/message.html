@@ -1,0 +1,17 @@
+<html>
+<head><title>Home Page</title></head>
+<body>
+<div align="center">
+    Already authorized your slack workspace to allow this app to send a message?<br/><br/>
+
+    <h1>Send Slack Message</h1>
+    <form action="#" th:action="@{/send}" method="post" th:object="${slackMessage}">
+        <label>Message:</label>
+        <input type="text" th:field="*{message}" /><br/><br/>
+        <input type="hidden" th:field="*{webhookUrl}" value="${webhookUrl}"/><br/><br/>
+        <button type="submit">Send</button>
+    </form>
+    <span th:text="${slackMessage.previousMessageStatus}"></span>
+</div>
+</body>
+</html>
