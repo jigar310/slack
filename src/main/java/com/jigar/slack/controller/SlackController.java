@@ -32,7 +32,7 @@ public class SlackController {
         System.out.println(slackMessage.getMessage());
         System.out.println(slackMessage.getWebhookUrl());
         if(slackService.sendMessage(slackMessage.getWebhookUrl(),slackMessage.getMessage())){
-            slackMessage.setPreviousMessageStatus("Below message was sent successfully!\n" + slackMessage.getMessage());
+            slackMessage.setPreviousMessageStatus("'"+slackMessage.getMessage()+ "' was sent successfully!");
         }else{
             slackMessage.setPreviousMessageStatus("Error Sending Message!");
         }
